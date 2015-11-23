@@ -25,6 +25,10 @@ pairs(~ ., data = dset, main = "Simple Scatterplot matrix")
 
 #Sampling not feasible as dset is small
 
+#ANOVA
+ava <- aov(Systol ~ ., data = dset)
+summary(ava)
+
 #Models
 
 #All independent variables

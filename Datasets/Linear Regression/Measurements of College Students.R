@@ -19,6 +19,10 @@ pairs(Height~ ., data = dset, main = "Simple Scatterplot matrix") #Dependent Var
 
 #Sampling not feasible as small dataset
 
+#ANOVA
+ava <- aov(Height ~ ., data = dset)
+summary(ava)
+
 #Model
 
 #All independent variables
