@@ -1,4 +1,4 @@
-#Iris Dataset with SVM
+#Iris Dataset with SVM as Polynomial Classification
 
 #Data Set Information:
   
@@ -26,7 +26,7 @@
 #Import Dataset
 dname <- c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width", "Species")
 dset <- read.table(url("https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"), header = FALSE, fill = TRUE, col.names = dname  , sep = ",")
-dset$Species = as.factor(dset$Species)
+dset$Species = as.factor(dset$Species) #For Classification
 
 #Scatterplot matrix to understand relations
 pairs(Species~ ., data = dset, main = "Simple Scatterplot matrix")
@@ -51,7 +51,7 @@ svmTuneGrid <- data.frame(.sigma = sigDist[1], .C = 0.5)
 
 
 #Training Model
-m_svm <- train(Species ~ ., data = train, kernel = "radial")
+m_svm <- train(Species ~ ., data = train, kernel = "ploynomial", type = "C-classification")
 summary(m_svm)
 plot(m_svm)
 
@@ -61,3 +61,9 @@ m_pred
 
 table(m_pred, test$Species)
 
+#Polynomial Kernel with Classifcation Yields Perfect Results on Test
+
+#m_pred            Iris-setosa Iris-versicolor Iris-virginica
+#Iris-setosa               7               0              0
+#Iris-versicolor           0               7              0
+#Iris-virginica            0               0              5
