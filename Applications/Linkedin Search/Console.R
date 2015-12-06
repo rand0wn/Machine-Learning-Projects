@@ -1,5 +1,4 @@
-#Overview of Project
-
+#Main Console
 
 #Input Variables:
 
@@ -11,6 +10,9 @@ Info <- readline(prompt = "Enter any other relevant information(skills, projects
 
 #Keyword to pass to custom search
 Keywords <- paste(Name, Location, Organisation, Role, Info, sep = "+")
+
+#Fix Spaces in Keyword String
+Keywords <- gsub(" ", "+", Keywords, fixed = TRUE)
 
 #URL to Fetch from
 ur <- "https://www.googleapis.com/customsearch/v1element?key=AIzaSyCVAXiUzRYsML1Pv6RwSG1gunmMikTzQqY&num=20&cx=009462381166450434430:ecyvn9zudgu&q="

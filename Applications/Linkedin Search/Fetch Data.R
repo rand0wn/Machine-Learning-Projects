@@ -6,6 +6,8 @@ require(jsonlite)
 
 source("Console.R") #For Keywords input by user
 
+#if HTTP 400, please check Keyword
+
 #Function to clean fetched data
 
 clean <- function(result) {
