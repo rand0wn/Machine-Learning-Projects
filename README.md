@@ -1,5 +1,5 @@
 # Machine-Learning-Projects
-Collection Of Machine Learning Projects
+Collection Of Machine Learning Projects:
 
 This repository is divided into three parts: 1. Datasets 2. Applications 3. Theoretical Models
 
